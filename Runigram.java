@@ -122,7 +122,7 @@ public class Runigram {
 	// the three values r = lum, g = lum, b = lum.
 	private static Color luminance(Color pixel) {
 		double lum = 0.299 * pixel.getRed() + 0.587 * pixel.getGreen() + 0.114 * pixel.getBlue();
-		int lumValue = (int) lum;
+		int lumValue = Math.min(255, Math.max(0, (int) lum));
 		return new Color(lumValue, lumValue, lumValue);
 	}
 	
